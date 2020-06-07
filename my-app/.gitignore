@@ -34,6 +34,13 @@ local.properties
 #
 node_modules/
 root/
+CachedData/
+Cache/
+CachedExtension/
+"Code Cache"/
+GPUCache/
+User/
+logs/
 npm-debug.log
 yarn-error.log
 

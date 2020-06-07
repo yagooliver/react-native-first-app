@@ -2,11 +2,13 @@ import React from 'react';
 import {Field, reduxForm} from 'redux-form'
 import { StyleSheet, View } from 'react-native';  
 import InputText from '../../lib/components/InputText';
-import { Container,Text, Button } from 'native-base';
+import { Container,Text, Button,Spinner } from 'native-base';
 
 const Login = ({
   login,
-  onChangeLogin
+  onChangeLogin,
+  isSubmiting,
+  onSubmit
 }) => {
   const handleChangeEmail = (text) => {
     onChangeLogin({
@@ -20,6 +22,10 @@ const Login = ({
        ...login,
        password: text.nativeEvent.text
     });
+  }
+
+  const handleSubmit = () => {
+    onSubmit(login);
   }
 
   return (
@@ -46,9 +52,8 @@ const Login = ({
         }}
         component={InputText}/>
       <View style={{justifyContent: 'center', alignItems: 'center'}}>
-        <Button primary style={styles.button}>
-          <Text>Login</Text>
-        </Button>
+      {isSubmiting ? <Spinner color="blue"/>
+        : <Button primary style={styles.button} onPress={handleSubmit}><Text>Login</Text></Button>}
       </View>
     </Container>
   )

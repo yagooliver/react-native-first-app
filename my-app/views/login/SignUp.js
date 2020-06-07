@@ -2,17 +2,22 @@ import React from 'react';
 import {Field, reduxForm} from 'redux-form'
 import { StyleSheet, View } from 'react-native';  
 import InputText from '../../lib/components/InputText';
-import { Container,Text, Button } from 'native-base';
+import { Container,Text, Button, Spinner } from 'native-base';
 
 const SignUp = ({
   signUp,
-  onChange
+  onChange,
+  onSubmit,
+  isSubmiting
 }) => {
   const handleChange = (event, name ) => {
     onChange({
       ...signUp,
       [name]: event.nativeEvent.text
     })
+  }
+  const handleSubmit = () => {
+    onSubmit(signUp);
   }
   return (
     <Container style={styles.container}>
@@ -59,9 +64,8 @@ const SignUp = ({
         }}
         component={InputText}/>
       <View style={{justifyContent: 'center', alignItems: 'center'}}>
-        <Button primary style={styles.button}>
-          <Text>Sign Up</Text>
-        </Button>
+        {isSubmiting ? <Spinner color="blue"/>
+        : <Button primary style={styles.button} onPress={handleSubmit}><Text>Sign Up</Text></Button>}
       </View>
     </Container>
   )

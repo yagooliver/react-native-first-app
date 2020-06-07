@@ -25,6 +25,9 @@ UserInterfaceState.xcuserstate
 /dist
 /node_modules
 /root
+/CachedData
+/User
+/logs
 /platforms
 /plugins
 /www

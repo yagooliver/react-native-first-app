@@ -29,6 +29,8 @@ class LoginContainer extends Component{
             activeTabStyle={styles.active}>
             <Login 
               login={this.props.login} 
+              isSubmiting={this.props.isSubmiting}
+              onSubmit={this.props.loginUser}
               onChangeLogin={this.props.changeEdit}/>
           </Tab >
           <Tab 
@@ -39,6 +41,8 @@ class LoginContainer extends Component{
             tabStyle={styles.tab}>
             <SignUp
               signUp={this.props.signUp}
+              onSubmit={this.props.singUpUser}
+              isSubmiting={this.props.isSubmiting}
               onChange={this.props.changeSignUpEdit}
             />
           </Tab>
