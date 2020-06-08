@@ -2,4 +2,4 @@
 
 A sample of login screen with react-native and nodejs server with mongoDb
 
-THIS SAMPLE IS UNDER DEVELOPMENT
+![alt text](https://github.com/yagooliver/react-native-first-app//blob/master/my-app/assets/images/loginScreen.jpg?raw=true)
